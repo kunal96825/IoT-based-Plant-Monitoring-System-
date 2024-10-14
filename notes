@@ -12,7 +12,7 @@ Enable SSH:
 Open a terminal on your Raspberry Pi (or connect a keyboard and monitor if accessing it directly).
 Run the following command to enable SSH:
 bash
-Copy code
+
 sudo systemctl enable ssh
 sudo systemctl start ssh
 SSH is now enabled, allowing remote access.
@@ -20,7 +20,7 @@ Find Raspberry Pi's IP Address:
 
 In the Raspberry Pi terminal, run:
 bash
-Copy code
+
 hostname -I
 Note the IP address of your Raspberry Pi (e.g., 192.168.1.10).
 Step 3: Install the Remote - SSH Extension in VS Code
@@ -40,7 +40,7 @@ Enter the SSH Command:
 
 Type in the SSH command using the Raspberry Pi's IP address:
 bash
-Copy code
+
 ssh pi@192.168.1.10
 Replace 192.168.1.10 with your Raspberry Pi's actual IP address.
 For the first connection, you might need to verify the fingerprint by typing yes.
@@ -62,14 +62,14 @@ Run the Script:
 Open the Terminal in VS Code (`Ctrl+``) while connected to the Raspberry Pi.
 Run your Python script directly in this terminal:
 bash
-Copy code
+
 python3 plant_monitor.py
 Step 6: Install Python Libraries on the Raspberry Pi
 Install Required Libraries:
 
 If your script requires Python libraries (like paho-mqtt or Adafruit_DHT), you can install them using the terminal in VS Code:
 bash
-Copy code
+
 pip3 install paho-mqtt Adafruit_DHT
 Test Sensor Connections:
 
@@ -79,7 +79,7 @@ Install Git on Raspberry Pi:
 
 If you want to use version control, install Git on the Raspberry Pi:
 bash
-Copy code
+
 sudo apt-get install git
 Push Code to GitHub:
 
