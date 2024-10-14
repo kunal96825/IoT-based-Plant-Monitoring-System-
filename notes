@@ -1,0 +1,99 @@
+Step 1: Install VS Code on Your Main Computer
+Download VS Code:
+
+Visit Visual Studio Code's website and download the version for your operating system (Windows, macOS, or Linux).
+Follow the installation instructions on the website.
+Open VS Code:
+
+Launch Visual Studio Code once the installation is complete.
+Step 2: Enable SSH on Your Raspberry Pi
+Enable SSH:
+
+Open a terminal on your Raspberry Pi (or connect a keyboard and monitor if accessing it directly).
+Run the following command to enable SSH:
+bash
+Copy code
+sudo systemctl enable ssh
+sudo systemctl start ssh
+SSH is now enabled, allowing remote access.
+Find Raspberry Pi's IP Address:
+
+In the Raspberry Pi terminal, run:
+bash
+Copy code
+hostname -I
+Note the IP address of your Raspberry Pi (e.g., 192.168.1.10).
+Step 3: Install the Remote - SSH Extension in VS Code
+Open VS Code Extensions:
+
+In VS Code, click on the Extensions icon on the left sidebar (or press Ctrl+Shift+X).
+Search and Install the Extension:
+
+Search for Remote - SSH and click Install.
+This extension allows you to open a folder on a remote machine using SSH and work on it directly from VS Code.
+Step 4: Connect to the Raspberry Pi from VS Code
+Open the Remote-SSH Menu:
+
+Press Ctrl+Shift+P to open the Command Palette in VS Code.
+Type Remote-SSH: Connect to Host... and select it.
+Enter the SSH Command:
+
+Type in the SSH command using the Raspberry Pi's IP address:
+bash
+Copy code
+ssh pi@192.168.1.10
+Replace 192.168.1.10 with your Raspberry Pi's actual IP address.
+For the first connection, you might need to verify the fingerprint by typing yes.
+Enter Raspberry Pi Password:
+
+Enter the password for the pi user when prompted. By default, it might be raspberry (if you haven't changed it).
+Select the Configuration Folder:
+
+After successfully connecting, VS Code will prompt you to open a folder on the Raspberry Pi. Choose or create a folder where you want to store your project files.
+Step 5: Write and Run Code on the Raspberry Pi
+Create Python Files:
+
+Use the File Explorer in VS Code to create new Python files for your project (e.g., plant_monitor.py).
+Edit Code:
+
+Write your Python scripts to interact with the sensors, publish data using MQTT, and more. You can directly edit files on the Raspberry Pi through VS Code.
+Run the Script:
+
+Open the Terminal in VS Code (`Ctrl+``) while connected to the Raspberry Pi.
+Run your Python script directly in this terminal:
+bash
+Copy code
+python3 plant_monitor.py
+Step 6: Install Python Libraries on the Raspberry Pi
+Install Required Libraries:
+
+If your script requires Python libraries (like paho-mqtt or Adafruit_DHT), you can install them using the terminal in VS Code:
+bash
+Copy code
+pip3 install paho-mqtt Adafruit_DHT
+Test Sensor Connections:
+
+Make sure your sensors are properly connected to the Raspberry Pi's GPIO pins. Test reading values using simple Python scripts before integrating everything into your main project.
+Step 7: Use Git for Version Control (Optional)
+Install Git on Raspberry Pi:
+
+If you want to use version control, install Git on the Raspberry Pi:
+bash
+Copy code
+sudo apt-get install git
+Push Code to GitHub:
+
+Create a Git repository and push your code for version control and backup.
+Step 8: Disconnect and Reconnect to the Raspberry Pi
+Close the SSH Connection:
+
+To disconnect, simply close VS Code or use the Remote-SSH: Close Remote Connection option in the Command Palette.
+Reconnect Easily:
+
+For future sessions, you can use the Remote - SSH extension in VS Code to quickly reconnect to your Raspberry Pi.
+Summary of Key Steps
+Install VS Code and the Remote - SSH extension.
+Enable SSH on your Raspberry Pi and find its IP address.
+Connect to the Raspberry Pi using SSH from VS Code.
+Write, edit, and run Python scripts directly on the Raspberry Pi using VS Code’s terminal.
+This setup allows you to code in a more powerful environment on your computer while leveraging the Raspberry Pi's capabilities. Let me know if you need further guidance on any specific part of the setup!
